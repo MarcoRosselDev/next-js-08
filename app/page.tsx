@@ -51,15 +51,47 @@ export default function Home() {
             Deploy Now
           </a>
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
+            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener
+             noreferrer"
           >
             Documentation
           </a>
         </div>
+        <MyComponent name="Marco Rossel" />
       </main>
     </div>
+  );
+}
+
+type Type = {
+  name: string;
+};
+
+function MyComponent(props: Type) {
+  return (
+    <>
+      <div className="flex flex-col gap-2 p-8 sm:flex-row sm:items-center sm:gap-6 sm:py-4 ...">
+        <img
+          className="mx-auto block h-24 rounded-full sm:mx-0 sm:shrink-0"
+          src="https://tailwindcss.com/_next/static/media/erin-lindford.90b9d461.jpg"
+          alt=""
+        />
+        <div className="space-y-2 text-center sm:text-left">
+          <div className="space-y-0.5">
+            <p className="text-lg font-semibold text-black">Erin Lindford</p>
+            <p className="font-medium text-gray-500">Product Engineer</p>
+          </div>
+          <button className="border-purple-200 text-purple-600 hover:border-transparent hover:bg-purple-600 hover:text-white active:bg-purple-700 ...">
+            Message
+          </button>
+        </div>
+      </div>
+      <p className="border-t-indigo-950 text-cyan-500">
+        Buenos dias {props.name}
+      </p>
+    </>
   );
 }
